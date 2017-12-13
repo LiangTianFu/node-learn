@@ -1,0 +1,92 @@
+接口
+
+/get_banners
+=>[{ID, title, description, href}]
+
+/get_custom_evaluations
+=>[{ID, title, description, src}]
+
+-----------------
+
+
+Promise——解决异步操作
+
+异步操作：性能高、写程序非常麻烦
+同步操作：性能低、写程序很简单
+
+？：性能高、很简单
+
+Promise、generator、async/await
+KOA
+
+NodeJS：
+1.数据
+2.模块化
+	npm
+	上传
+3.系统模块
+	http
+	fs
+	crypto
+4.数据库
+	4大语句
+
+KOA
+
+
+express.static —— 指定静态文件的查找目录
+
+Multer 是一个 node.js 中间件，用于处理 multipart/form-data 类型的表单数据，它主要用于上传文件
+注意: Multer 不会处理任何非 multipart/form-data 类型的表单数据。
+
+
+----------------
+render
+任何对网页模板进行访问. res对象的render函数
+
+ res.render(view, [locals], callback);
+view 视图名, locals 为模板传入变量
+
+----------------
+redirect
+允许网址的重定向，跳转到指定的url并且可以指定status，默认为302方式
+根据指定url来重定向，可以域内路径、网页间跳转也可以跳转至不同域名
+
+ res.redirect([status], url);
+res.redirect(“login”);
+
+
+--------------
+HTTP动词都是Express的方法. post 改、put 增、delete 删、get 查
+
+
+GET
+GET 根据请求路径来处理客户端发出的GET请求
+ app.get(path, [callback(request, response)])
+
+ ALL
+ALL 以匹配所有的HTTP动词，也就是说它可以过滤所有路径的请求
+ app.all(path, [callback(request, response, next)])
+
+
+ USE
+USE express调用中间件的方法，它返回一个函数. path默认为"/"
+ app.use([path], [callback(request, response, next)])
+
+USE 不仅可以调用中间件,还可以根据请求的网址，返回不同的网页内容
+
+post
+处理指定页面的post请求
+ app.post(path,function(req, res));
+
+
+ fs.rename(oldPath, newPath, callback)
+
+
+
+ path.parse() 方法返回一个对象，对象的属性表示 path 的元素
+
+
+crypto加密
+ crypto.createHash（algorithm [，options]）
+ 创建并返回一个Hash可用于使用给定的生成哈希摘要的对象algorithm。可选options参数控制流行为。

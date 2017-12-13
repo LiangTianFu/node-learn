@@ -1,0 +1,138 @@
+1.首页
+	banner
+	产品介绍
+	用户评价
+2.技术
+3.blog
+4.联系
+	地址+地图
+	发送联系消息
+5.关于我们
+
+
+
+
+
+定义：
+url		300字
+
+admin_table               管理员用户表
+ID
+username    varchar(32)
+password    varchar(32)
+
+---------------------------------------
+
+banner_table			     焦点图表
+ID
+title		varchar(32)
+description	varchar(300)描述
+href		varchar(300)
+
+---------------------------------------
+
+intro_table			        产品介绍表
+ID
+title		varchar(32)
+description	varchar(200)
+href		varchar(300)
+
+--------------------------------------
+
+custom_evaluation_table		用户评价表
+ID
+title		varchar(32)
+description	varchar(200)
+src		    varchar(300)
+
+---------------------------------------
+
+news_table			        新闻表
+ID
+title		varchar(100)
+summary		varchar(500)副标题
+ico_src		varchar(300)
+big_pic_src	varchar(300)
+content		text
+
+---------------------------------------
+
+blog_table			       博文表
+ID
+title		varchar(100)
+pic_src		varchar(300)
+pic_big_src	varchar(300)
+summary		varchar(500)
+content		text
+post_time	timestamp  时间戳
+author		varchar(32)
+n_view		int
+
+----------------------------------------
+
+contact_table			    地址表
+ID
+street街道地址    varchar(50)
+phone 电话       varchar(20)
+fax              varchar(20)
+email            varchar(32)
+weibo            varchar(40)
+wechat           varchar(40)
+//qq               varchar(40)
+map地图
+---------------------------------------
+
+msg_table			       发送信息表
+ID
+name             varchar(16)
+email            varchar(60)
+phone            varchar(20)
+subject          text
+
+---------------------------------------
+
+aboutus_table			   关于我们表
+ID
+title            varchar(200)
+content          text
+pic_src          varchar(300)
+href             varchar(300)
+
+-----------------------------------------
+
+
+route：
+普通用户----前台部分
+管理员用户----后台管理部分
+
+
+route：  小型Express
+
+
+--------------------------
+-S就是--save的简写，就行npm默认一个start的字段，你可以不必输入npm run start 而只需输入npm start，这两个效果是一样的。
+-D就是--save-dev 这样安装的包的名称及版本号就会存在package.json的devDependencies这个里面，而--save会将包的名称及版本号放在dependencies里面。
+
+
+npm installdependencies在默认情况下保存指定的软件包。另外，您可以使用一些附加标志控制他们在哪里以及如何保存：
+
+-P, --save-prod：包会出现在你的dependencies。这是默认的，除非-D或-O存在。
+
+-D, --save-dev：包会出现在你的devDependencies。
+
+-O, --save-optional：包会出现在你的optionalDependencies。
+
+--no-save：防止保存到dependencies。
+
+当使用上述任何选项来保存package.json的依赖时，还有两个附加的可选标志：
+
+-E, --save-exact：保存的依赖关系将使用精确的版本进行配置，而不是使用npm的默认的semver范围运算符。
+
+-B, --save-bundle：保存的依赖关系也将被添加到您的bundleDependencies列表中。
+
+
+----------------------
+
+拖库（数据库）：
+数据库里面不能存储明文密码
+‘加密’之后储存
